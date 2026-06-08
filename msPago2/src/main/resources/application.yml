@@ -1,0 +1,29 @@
+server:
+  port: 8091
+
+spring:
+  application:
+    name: msPago2
+  datasource:
+    url: jdbc:mysql://localhost:3306/pago_db
+    username: root
+    password: 
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+springdoc:
+  api-docs:
+    enabled: true
+    version: openapi_3_0
+  swagger-ui:
+    enabled: true
