@@ -13,7 +13,7 @@ import cl.duoc.msPago2.dto.ClienteDTO;
 // name -> el nombre logico del microservicio
 // url -> direccion donde esta el microservicio
 
-@FeignClient(name = "msCliente", url = "http://localhost:8081")
+@FeignClient(name = "msCliente")
 
 public interface ClienteClient {
 
