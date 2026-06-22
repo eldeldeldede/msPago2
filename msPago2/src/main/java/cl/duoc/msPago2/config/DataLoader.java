@@ -1,5 +1,7 @@
 package cl.duoc.msPago2.config;
 
+import java.time.LocalDate;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -45,11 +47,11 @@ public class DataLoader {
                 pagoRepository.save(pago2);
                 pagoRepository.save(pago3);
 
-                Comprobante comprobante1 = new Comprobante(null,"Pago realizado correctamente",new java.util.Date(),150000,1001,pago1);
+                Comprobante comprobante1 = new Comprobante(null,"Pago realizado correctamente", LocalDate.now(),150000,1001,pago1);
 
-                Comprobante comprobante2 = new Comprobante(null,"Pago pendiente de confirmación",new java.util.Date(),90000,1002,pago2);
+                Comprobante comprobante2 = new Comprobante(null,"Pago pendiente de confirmación",LocalDate.now(),90000,1002,pago2);
 
-                Comprobante comprobante3 = new Comprobante(null,"Pago recibido en efectivo",new java.util.Date(),200000,1003,pago3);
+                Comprobante comprobante3 = new Comprobante(null,"Pago recibido en efectivo",LocalDate.now(),200000,1003,pago3);
 
                 comprobanteRepository.save(comprobante1);
                 comprobanteRepository.save(comprobante2);

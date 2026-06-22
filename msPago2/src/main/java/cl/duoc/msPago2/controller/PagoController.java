@@ -22,7 +22,7 @@ import io.swagger.v3.oas.annotations.Operation;
 @RequestMapping("/api/v1/pagos")
 public class PagoController {
 
-     @Autowired
+    @Autowired
     private PagoService service;
 
     @GetMapping

@@ -1,6 +1,6 @@
 package cl.duoc.msPago2.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 
 import jakarta.persistence.Column;
@@ -25,11 +25,12 @@ public class Comprobante {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     @Column(nullable = false)
     private String informacion;
 
     @Column(nullable = false)
-    private Date fecha_emision;
+    private LocalDate fecha_emision;
 
     @Column(nullable = false)
     private Integer total;

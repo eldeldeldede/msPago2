@@ -30,30 +30,26 @@ public class PagoService {
     }
 
     public Pago guardar(Pago pago){
-        
-        
         if(pago.getComprobante() != null){
             pago.getComprobante().setPago(pago);
-        }
-
-        
+        }     
         return repo.save(pago);
     }
 
     public Pago buscarPorId(Integer id){
-        return repo.findById(id).orElseThrow(() -> new RuntimeException("pago no encontrado"));
+        return repo.findById(id).orElseThrow(() -> new RuntimeException("Pago no encontrado"));
     }
 
     public void eliminar(Integer id){
         if(repo.existsById(id)){
             repo.deleteById(id);
         }else{
-            throw new RuntimeException("pago no encontrado");
+            throw new RuntimeException("Pago no encontrado");
         }
     }
 
     public Pago actualizar(Integer id, Pago pagoActualizar){
-        Pago pago = repo.findById(id).orElseThrow(() -> new RuntimeException("pago no encontrado"));
+        Pago pago = repo.findById(id).orElseThrow(() -> new RuntimeException("Pago no encontrado"));
         pago.setMonto(pagoActualizar.getMonto());    
         pago.setEstado(pagoActualizar.getEstado());
         
@@ -72,7 +68,7 @@ public class PagoService {
 
     public PagoDTO obtenerDetallesPago(Integer id){
 
-        Pago pago = repo.findById(id).orElseThrow(() -> new RuntimeException("pago no encontrado"));
+        Pago pago = repo.findById(id).orElseThrow(() -> new RuntimeException("Pago no encontrado"));
 
         ArriendoDTO arriendo = arriendoClient.buscarDTO(pago.getArriendoId());
         
