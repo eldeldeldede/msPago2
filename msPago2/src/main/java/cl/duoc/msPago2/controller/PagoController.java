@@ -17,9 +17,11 @@ import cl.duoc.msPago2.dto.PagoDTO;
 import cl.duoc.msPago2.model.Pago;
 import cl.duoc.msPago2.service.PagoService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
 @RequestMapping("/api/v1/pagos")
+@Tag(name = "Pago Controller", description = "Controlador para gestionar los pagos en el sistema del Rent a Car.")
 public class PagoController {
 
     @Autowired
