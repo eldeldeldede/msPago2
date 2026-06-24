@@ -1,5 +1,7 @@
 package cl.duoc.msPago2.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -26,9 +28,11 @@ public class Pago {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Schema(description = "Identificador único del pago.")
     private Integer id;
+
     @Column(nullable = false)
     @Schema(description = "Monto del pago.")
     private Integer monto;
+    
     @Column(nullable = false)
     @Schema(description = "Estado del pago.")
     private String estado;
@@ -48,5 +52,6 @@ public class Pago {
 
     @OneToOne(mappedBy = "pago", cascade = CascadeType.ALL)
     @Schema(description = "Comprobante del pago.")
+    @JsonBackReference
     private Comprobante comprobante;
 }
